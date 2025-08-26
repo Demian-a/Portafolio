@@ -1,0 +1,204 @@
+/* Reset muy básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: #222222;
+  line-height: 1.6;
+  font-weight: 300;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* Header */
+header {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 10;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #222;
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+header a {
+  text-decoration: none;
+  color: #3a86ff;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+header a:hover {
+  color: #1e4ede;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.hero h2 {
+  font-weight: 600;
+  font-size: 2.6rem;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.hero h2 span {
+  color: #3a86ff;
+}
+
+.hero p {
+  font-weight: 300;
+  font-size: 1.25rem;
+  color: #555;
+}
+
+/* Secciones */
+section {
+  margin-bottom: 60px;
+}
+
+section h3 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 6px;
+  color: #222;
+}
+
+section p,
+section ul {
+  font-weight: 300;
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+section ul {
+  list-style: disc inside;
+  padding-left: 0;
+}
+
+section ul li {
+  margin-bottom: 10px;
+}
+
+section ul li strong {
+  color: #3a86ff;
+}
+
+/* Contacto */
+.contacto a {
+  color: #3a86ff;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.contacto a:hover {
+  border-color: #3a86ff;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  font-weight: 300;
+  color: #999;
+  border-top: 1px solid #f0f0f0;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  header nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  header ul {
+    gap: 16px;
+  }
+}
+/* Animación fade-in y slide-up */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aplicamos animación a las secciones y hero */
+.hero,
+.sobre-mi,
+.proyectos,
+.contacto {
+  animation: fadeSlideUp 0.8s ease forwards;
+  opacity: 0; /* estado inicial antes de la animación */
+  animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+.hero {
+  animation-delay: 0.1s;
+}
+
+.sobre-mi {
+  animation-delay: 0.3s;
+}
+
+.proyectos {
+  animation-delay: 0.5s;
+}
+
+.contacto {
+  animation-delay: 0.7s;
+}
+
+/* Estilo imagen centrada */
+.foto-perfil {
+  display: block;
+  margin: 20px auto 30px auto;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 6px 15px rgba(58, 134, 255, 0.3);
+  border: 3px solid #3a86ff;
+}
